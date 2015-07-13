@@ -298,9 +298,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', end
 	background: rgba(0,0,0,0.8);
 	z-index: 99999;
 	opacity:0;
-	-webkit-transition: opacity 400ms ease-in;
+	/*-webkit-transition: opacity 400ms ease-in;
 	-moz-transition: opacity 400ms ease-in;
-	transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;*/
 	pointer-events: none;
 }
 
@@ -360,9 +360,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', end
 	background: rgba(0,0,0,0.8);
 	z-index: 99999;
 	opacity:0;
-	-webkit-transition: opacity 400ms ease-in;
+	/*-webkit-transition: opacity 400ms ease-in;
 	-moz-transition: opacity 400ms ease-in;
-	transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;*/
 	pointer-events: none;
 }
 
@@ -446,4 +446,74 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', end
 .email {
 	margin-left:74px;
 	margin-top:-17px;
+}
+
+.loggedin {
+	position: absolute;
+	margin-left:850px;
+	margin-top:35px;
+	font-family: "gothic";
+}
+
+.logoutbutton a{
+
+	color:#000000;
+	font-size:15px;
+	font-family:"gothic";
+	text-decoration: none;
+	font-style: italic;
+	position: absolute;
+	margin-top:-17px;
+	margin-left:165px;
+}
+
+.logoutbutton a:hover{
+
+	color:#580000;
+	font-size:15px;
+	font-family:"gothic";
+	text-decoration: none;
+	font-style: italic;
+}
+
+.logoutbutton a:visited{
+
+	
+	font-size:15px;
+	font-family:"gothic";
+	text-decoration: none;
+	font-style: italic;
+}
+
+.administratorcontrolpaneltext a{
+
+	color:#000000;
+	font-size:15px;
+	font-family:"gothic";
+	text-decoration: none;
+	font-style: italic;
+	position: absolute;
+	margin-top:37px;
+	margin-left:50px;
+
+}
+
+.administratorcontrolpaneltext a:hover {
+
+	color:#580000;
+	font-size:15px;
+	font-family:"gothic";
+	text-decoration: none;
+	font-style: italic;
+
+
+}
+
+
+.administratorcontrolpaneltext a:visited{
+		font-size:15px;
+	font-family:"gothic";
+	text-decoration: none;
+	font-style: italic;
+
 }
