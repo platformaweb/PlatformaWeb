@@ -14,20 +14,41 @@ if(isset($_POST['register']))
  $password = mysql_real_escape_string($_POST['password']);
  $firstname = mysql_real_escape_string($_POST['firstname']);
  $lastname = mysql_real_escape_string($_POST['lastname']);
- /*$confirmpassword = md5(mysql_real_escape_string($_POST['confirmpassword']));*/
+ /*$confirmpassword = mysql_real_escape_string($_POST['confirmpassword']));*/
  $confirmpassword = mysql_real_escape_string($_POST['confirmpassword']);
  $age = mysql_real_escape_string($_POST['age']);
  $gender = mysql_real_escape_string($_POST['gender']);
- $uk = mysql_real_escape_string($_POST['uk']);
 
- 
- if(mysql_query("INSERT INTO users(user,email,password,firstname,lastname,confirmpassword,age,gender,uk) VALUES('$user','$email','$password','$firstname','$lastname','$confirmpassword','$age','$gender','$uk')"))
+ //if ($_POST["password"] == $_POST["confirmpassword"]) {
+   // success!
+//}
+//else {
+   // failed :(
+//}
+
+ if(mysql_query("INSERT INTO users(user,email,password,firstname,lastname,confirmpassword,age,gender) VALUES('$user','$email','$password','$firstname','$lastname','$confirmpassword','$age','$gender')"))
  {
 
   ?>
         <script type="text/javascript">
 		alert("Successfully Registered. Redirecting to login page...");
 		window.location.href = "index.php#openModal";
+
+    var password = document.getElementById("password")
+  , confirmpassword = document.getElementById("confirmpassword");
+
+function validatePassword(){
+  if(password.value != confirmpassword.value) {
+    confirmpassword.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirmpassword.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirmpassword.onkeyup = validatePassword;
+
+
 		</script>
        
 		

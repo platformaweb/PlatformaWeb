@@ -4,7 +4,6 @@
 	<head>
 		<title>Platforma Web</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<script type="text/javascript" src="confirmpassword.js"></script>
 	</head>
 
 <div class="background">
@@ -157,8 +156,7 @@ if(isset($_SESSION['user'])) {
 		<br><br>
 		Email:<br>
 		<input type:"email" name="email" required>
-		
-		
+
 
 		<br><br>
 		<button type="submit" name="register">Register</button>
@@ -175,8 +173,8 @@ if(isset($_SESSION['user'])) {
 				?>
 
 		
-		<p class="fronttext"><b>About us</b></p>
-					<p class="fronttext1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim massa, porta eget purus eget, efficitur vestibulum arcu. Duis libero purus, dictum eu vehicula laoreet, auctor vitae massa. Suspendisse vestibulum venenatis varius. Nullam sollicitudin ultricies pulvinar. Vivamus metus mi, dignissim non condimentum ut, sagittis ac velit. Fusce mattis odio sit amet lacus finibus, ut laoreet magna facilisis. Proin sit amet velit felis. Mauris felis magna, convallis sit amet sollicitudin ut, eleifend sit amet dolor. Suspendisse gravida posuere tortor quis mollis. Phasellus consectetur vulputate convallis. Suspendisse vel urna vitae eros tempus tincidunt quis sit amet turpis. Donec aliquam aliquet mi, quis eleifend ipsum sagittis sit amet. Maecenas quis iaculis dui.</p>
+		<!--<div class="addsurveybutton"><a href="poweruser.php">Add Survey</a></div>-->
+
 
 		
 		<div class="buttons">

@@ -151,9 +151,7 @@ if(isset($_SESSION['user'])) {
 		<br><br>
 		Email:<br>
 		<input type:"email" name="email" required>
-		<br>
-		Unique key:<br>
-		<input type="text" name="uk">
+		
 
 		<br><br>
 		<button type="submit" name="register">Register</button>
@@ -211,16 +209,79 @@ if(isset($_SESSION['user'])) {
      
 
 </table>
+
 <form action="updatelevels.php" method="post">
-<div class="butondeactualizare">Enter Username to grant Admin privileges:  <br><input type="text" name="name" size="15"><br>
+<div class="butondeactualizare">
+
+Enter Username to grant Admin privileges:     <br><input type="text" name="name" size="15"><br>
 Enter Username to grant PowerUser privileges: <br><input type="text" name="name1" size="15"><br>
-Enter Username to grant User privileges: <br><input type="text" name="name2" size="15"><br>
-Enter Username to be deleted: <br><input type="text" name="name3" size="15"><br>
+Enter Username to grant User privileges:      <br><input type="text" name="name2" size="15"><br>
+
 <input type="submit" value="Change"></button></div>
+<div class="delete">
+
+Enter Username to be deleted:<br><input type="text" name="name3" size="15"><br>
+<input type="submit" value="Delete"></button>
+
+</div>
+</form>
+
+<?php
+
+mysql_connect("localhost","root","") or die("not connect");
+mysql_select_db("dbtest") or die ("not connect");
+
+$output = '';
+
+if(isset($_POST['search'])){
+$searchq = $_POST['search'];
 
 
+$query = mysql_query("SELECT * FROM users WHERE user LIKE '%$searchq%' ") or die("Could not connect!");
+$count = mysql_num_rows($query);
 
-</form>  
+if($count == 0)
+{
+
+	$output = 'There was no results!';
+}
+else{
+
+while($row = mysql_fetch_array($query)){
+
+	$fname = $row['firstname'];
+    $lname = $row['lastname'];
+    $email = $row['email'];
+    $uname = $row['user'];
+    $lvl   = $row['level'];
+
+	$output = '<div> <b>Username:</b>' .$uname.' <br><b>Level:</b>' .$lvl.'<br> <b> Real Name: </b>'.$fname.' '.$lname.'<br><b>Email: </b>  '  .$email. '<br></div>';
+
+
+}
+
+}
+
+}
+?>
+
+
+<form action="admin.php" method="post">
+<div class="search">
+
+	<input type="text" name="search" size="15" placeholder="Search for username..."/>
+     <input type="submit" value="Search"></button></div>
+
+
+</form>
+
+
+<div class="searchtest">
+
+	<?php
+echo ($output); ?> </div>
+
+
 
 
 		
@@ -242,6 +303,10 @@ Enter Username to be deleted: <br><input type="text" name="name3" size="15"><br>
 
 	</div>
 </div>
+
+
+
+
 
 
 	</body>

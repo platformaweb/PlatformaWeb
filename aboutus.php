@@ -66,6 +66,19 @@ if(isset($_SESSION['user'])) {
 
 				?>
 
+ <?php 
+if(isset($_SESSION['user'])) {
+        if($_SESSION['level'] == 'poweruser') 
+        	{
+        ?>
+        	<div class="administratorcontrolpaneltext"> 
+        	<a href="poweruser.php"><b>PowerUser Control Panel</b></a></div> 
+        		<?php						
+			} 
+		}
+
+				?>				
+
         	
 
 		<div class="despartitorvertical"></div>
@@ -143,9 +156,7 @@ if(isset($_SESSION['user'])) {
 		<br><br>
 		Email:<br>
 		<input type:"email" name="email" required>
-		<br>
-		Unique key:<br>
-		<input type="text" name="uk">
+	
 
 		<br><br>
 		<button type="submit" name="register">Register</button>

@@ -464,7 +464,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', end
 	font-style: italic;
 	position: absolute;
 	margin-top:-17px;
-	margin-left:165px;
+	margin-left:175px;
 }
 
 .logoutbutton a:hover{
@@ -555,3 +555,51 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', end
 	font-family: "gothic";
 }
 
+.search{
+
+    margin-top:75px;
+	margin-left:450px;
+	position: absolute;
+    
+}
+
+.delete{
+    margin-top:150px;
+	margin-left:450px;
+	position: absolute;
+    font-family: "gothic";
+}
+
+.addsurveybutton {
+  background: #d91818;
+  background-image: -webkit-linear-gradient(top, #d91818, #420505);
+  background-image: -moz-linear-gradient(top, #d91818, #420505);
+  background-image: -ms-linear-gradient(top, #d91818, #420505);
+  background-image: -o-linear-gradient(top, #d91818, #420505);
+  background-image: linear-gradient(to bottom, #d91818, #420505);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: "gothic";
+  color: #ffffff;
+  font-size: 12px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  position: absolute;
+}
+
+.addsurveybutton:hover {
+  background: #420505;
+  background-image: -webkit-linear-gradient(top, #420505, #d91818);
+  background-image: -moz-linear-gradient(top, #420505, #d91818);
+  background-image: -ms-linear-gradient(top, #420505, #d91818);
+  background-image: -o-linear-gradient(top, #420505, #d91818);
+  background-image: linear-gradient(to bottom, #420505, #d91818);
+  text-decoration: none;
+}
+
+.searchtest {
+	margin-left:850px;
+	margin-top:70px;
+	position: absolute;
+}
