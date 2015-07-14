@@ -14,6 +14,8 @@
 	<head>
 		<title>Platforma Web</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
+
+
 	</head>
 
 <div class="background">
@@ -167,9 +169,48 @@ if(isset($_SESSION['user'])) {
 
 				?>
 
+
 		
-		<p class="fronttext"><b>Admin</b></p>
-					<p class="fronttext1">Administrator</p>
+		<form action="adminupdate4.php" method="POST">
+		<table id="customers">
+  <tr>
+    <th>Username</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Email</th>
+    <th>UserLevel</th>
+  </tr>
+  <?php
+            $connect = mysql_connect("localhost","root", "");
+            if (!$connect) {
+                die(mysql_error());
+            }
+            mysql_select_db("dbtest");
+            $results = mysql_query("SELECT * FROM users ");
+            while($row = mysql_fetch_array($results)) {
+            ?>
+  <tr>
+    <td><?php echo $row['user']?><input type="text" placeholder="Enter username..." name="user"></td>
+    <td><?php echo $row['firstname']?></td>
+    <td><?php echo $row['lastname']?></td>
+    <td><?php echo $row['age']?></td>
+    <td><?php echo $row['gender']?></td>
+    <td><?php echo $row['email']?></td>
+    <td><?php echo $row['level']?><input type="text" placeholder="Enter desired level..." name="level"></td>
+
+  </tr>
+
+ 
+  <?php
+            }
+            ?>
+</table>
+ <input name="submit" type="submit" value="Submit">
+
+</form>  
+
 
 		
 		<div class="buttons">

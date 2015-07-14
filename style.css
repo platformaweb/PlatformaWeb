@@ -517,3 +517,32 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', end
 	font-style: italic;
 
 }
+
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+    position: absolute;
+    margin-top:150px;
+    /*margin-left:20px;*/
+}
+
+#customers td, #customers th {
+    font-size: 1em;
+    border: 1px solid #000000;
+    padding: 3px 7px 2px 7px;
+}
+
+#customers th {
+    font-size: 1.1em;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: #8B0000;
+    color: #ffffff;
+}
+
+#customers tr.alt td {
+    color: #000000;
+    background-color: #EAF2D3;
+}
