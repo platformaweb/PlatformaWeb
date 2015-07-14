@@ -12,8 +12,9 @@ if ($conn->connect_error) {
 }
 
 
+$user = $_POST['level']; 
 
-$sql = "UPDATE users SET level='".$_POST['level']."' WHERE user='".$_POST['user']."'";
+$sql = "UPDATE users SET level='admin' WHERE level='$user' ";
 
 
 

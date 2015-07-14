@@ -171,7 +171,7 @@ if(isset($_SESSION['user'])) {
 
 
 		
-		<form action="adminupdate4.php" method="POST">
+		<form action="adminupdate2.php" method="post">
 		<table id="customers">
   <tr>
     <th>Username</th>
@@ -192,22 +192,27 @@ if(isset($_SESSION['user'])) {
             while($row = mysql_fetch_array($results)) {
             ?>
   <tr>
-    <td><?php echo $row['user']?><input type="text" placeholder="Enter username..." name="user"></td>
+    <td><?php echo $row['user']?></td>
     <td><?php echo $row['firstname']?></td>
     <td><?php echo $row['lastname']?></td>
     <td><?php echo $row['age']?></td>
     <td><?php echo $row['gender']?></td>
     <td><?php echo $row['email']?></td>
-    <td><?php echo $row['level']?><input type="text" placeholder="Enter desired level..." name="level"></td>
+    <td><?php echo $row['level']?><input type="text" name=""></input></td>
 
   </tr>
+
 
  
   <?php
             }
             ?>
+
+     
+
 </table>
- <input name="submit" type="submit" value="Submit">
+
+<button name="user" type="submit">Save changes</button>
 
 </form>  
 
@@ -235,4 +240,3 @@ if(isset($_SESSION['user'])) {
 
 	</body>
 </html>
-
