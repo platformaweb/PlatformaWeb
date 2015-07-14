@@ -15,10 +15,13 @@ if ($conn->connect_error) {
 $user = $_POST['name']; 
 $user1 = $_POST['name1']; 
 $user2 = $_POST['name2']; 
+$user3 = $_POST['name3'];
 
 $sql = "UPDATE users SET level='admin' WHERE user='$user' ";
 $sql1 = "UPDATE users SET level='poweruser' WHERE user='$user1' ";
 $sql2 = "UPDATE users SET level='user' WHERE user='$user2' ";
+
+$sql3= "DELETE FROM users WHERE user=$user3";
 
 
 
@@ -32,6 +35,11 @@ if ($conn->query($sql) === TRUE) {
 if ($conn->query($sql2) === TRUE) {
     header("Location: admin.php");
 } 
+
+if ($conn->query($sql3) === TRUE) {
+    header("Location: admin.php");
+} 
+
 
 
 } 

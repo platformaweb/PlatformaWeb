@@ -215,7 +215,10 @@ if(isset($_SESSION['user'])) {
 <div class="butondeactualizare">Enter Username to grant Admin privileges:  <br><input type="text" name="name" size="15"><br>
 Enter Username to grant PowerUser privileges: <br><input type="text" name="name1" size="15"><br>
 Enter Username to grant User privileges: <br><input type="text" name="name2" size="15"><br>
+Enter Username to be deleted: <br><input type="text" name="name3" size="15"><br>
 <input type="submit" value="Change"></button></div>
+
+
 
 </form>  
 
