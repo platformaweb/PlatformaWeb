@@ -523,7 +523,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', end
     width: 100%;
     border-collapse: collapse;
     position: absolute;
-    margin-top:150px;
+    margin-top:225px;
     /*margin-left:20px;*/
 }
 
@@ -546,3 +546,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', end
     color: #000000;
     background-color: #EAF2D3;
 }
+
+.butondeactualizare {
+
+	margin-top:75px;
+	margin-left:15px;
+	position: absolute;
+	font-family: "gothic";
+}
+

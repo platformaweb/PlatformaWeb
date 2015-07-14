@@ -171,7 +171,7 @@ if(isset($_SESSION['user'])) {
 
 
 		
-		<form action="adminupdate2.php" method="post">
+		
 		<table id="customers">
   <tr>
     <th>Username</th>
@@ -198,7 +198,7 @@ if(isset($_SESSION['user'])) {
     <td><?php echo $row['age']?></td>
     <td><?php echo $row['gender']?></td>
     <td><?php echo $row['email']?></td>
-    <td><?php echo $row['level']?><input type="text" name=""></input></td>
+    <td><?php echo $row['level']?>
 
   </tr>
 
@@ -211,8 +211,11 @@ if(isset($_SESSION['user'])) {
      
 
 </table>
-
-<button name="user" type="submit">Save changes</button>
+<form action="updatelevels.php" method="post">
+<div class="butondeactualizare">Enter Username to grant Admin privileges:  <br><input type="text" name="name" size="15"><br>
+Enter Username to grant PowerUser privileges: <br><input type="text" name="name1" size="15"><br>
+Enter Username to grant User privileges: <br><input type="text" name="name2" size="15"><br>
+<input type="submit" value="Change"></button></div>
 
 </form>  
 
