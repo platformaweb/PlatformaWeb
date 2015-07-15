@@ -19,13 +19,14 @@ if(isset($_POST['register']))
  $age = mysql_real_escape_string($_POST['age']);
  $gender = mysql_real_escape_string($_POST['gender']);
 
- //if ($_POST["password"] == $_POST["confirmpassword"]) {
-   // success!
-//}
-//else {
-   // failed :(
-//}
+if ($_POST['password']!= $_POST['confirmpassword'])
+ {
+  header("Location: index.php#openModalRegister");
 
+
+
+ }
+else{
  if(mysql_query("INSERT INTO users(user,email,password,firstname,lastname,confirmpassword,age,gender) VALUES('$user','$email','$password','$firstname','$lastname','$confirmpassword','$age','$gender')"))
  {
 
@@ -34,21 +35,8 @@ if(isset($_POST['register']))
 		alert("Successfully Registered. Redirecting to login page...");
 		window.location.href = "index.php#openModal";
 
-    var password = document.getElementById("password")
-  , confirmpassword = document.getElementById("confirmpassword");
 
-function validatePassword(){
-  if(password.value != confirmpassword.value) {
-    confirmpassword.setCustomValidity("Passwords Don't Match");
-  } else {
-    confirmpassword.setCustomValidity('');
-  }
-}
-
-password.onchange = validatePassword;
-confirmpassword.onkeyup = validatePassword;
-
-
+   
 		</script>
        
 		
@@ -57,9 +45,14 @@ confirmpassword.onkeyup = validatePassword;
  
  else
  {
-  ?>
-        <script>alert('Error while registering you...');</script>
-        <?php
+
+header("Location: index.php#openModalRegister");
+?>
+
+<script>alert('Check your mail and username! ');</script>
+
+<?php
  }
+}
 }
 ?>
