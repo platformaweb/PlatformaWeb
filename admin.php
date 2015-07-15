@@ -233,16 +233,26 @@ mysql_select_db("dbtest") or die ("not connect");
 
 $output = '';
 
+
+
+
 if(isset($_POST['search'])){
 $searchq = $_POST['search'];
+$searchq = preg_replace("#[^0-9a-z]#i", "" , $searchq);
 
 
 $query = mysql_query("SELECT * FROM users WHERE user LIKE '%$searchq%' ") or die("Could not connect!");
 $count = mysql_num_rows($query);
+if($searchq == ''){
+?>
 
+<?php
+}
+else{
 if($count == 0)
 {
-
+	 print $searchq;
+    print $count;
 	$output = 'There was no results!';
 }
 else{
@@ -255,7 +265,7 @@ while($row = mysql_fetch_array($query)){
     $uname = $row['user'];
     $lvl   = $row['level'];
 
-	$output = '<div> <b>Username:</b>' .$uname.' <br><b>Level:</b>' .$lvl.'<br> <b> Real Name: </b>'.$fname.' '.$lname.'<br><b>Email: </b>  '  .$email. '<br></div>';
+	$output .= '<div> <b>Username:</b>' .$uname.''.$count.'<br><b>Level:</b>' .$lvl.'<br> <b> Real Name: </b>'.$fname.' '.$lname.'<br><b>Email: </b>  '  .$email. '<br></div>';
 
 
 }
@@ -263,6 +273,8 @@ while($row = mysql_fetch_array($query)){
 }
 
 }
+}
+
 ?>
 
 

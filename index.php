@@ -94,11 +94,11 @@ if(isset($_SESSION['user'])) {
        
         else {
  ?>
-        	<div class="modalClassLogin"><a href="#openModal"><b>Login</b></a></div>
+        <div class="modalClassLogin"><a href="#openModal"><b>Login</b></a></div>
 
 		<div id="openModal" class="modalDialog">
 			<div>
-		<a href="#close" title="Close" class="close">X</a>
+		<div class="clo"><a href="#close" title="Close" class="close">X</a></div>
 		<form method="post" action="login.php">
 		Username:<br>
 		<input type="text" name="user">
@@ -111,6 +111,8 @@ if(isset($_SESSION['user'])) {
 		</form>
 			</div>
 		</div>
+
+
 				<?php
 
 
@@ -130,7 +132,7 @@ if(isset($_SESSION['user'])) {
 
 		<div id="openModalRegister" class="modalDialogRegister">
 			<div>
-		<a href="#close" title="Close" class="close">X</a>
+		<div class="cls"><a href="#close" title="Close" class="close">X</a></div>
 		<form method="post" action="register.php">
 		First Name:<br>
 		<input type="text" name="firstname">
@@ -144,11 +146,11 @@ if(isset($_SESSION['user'])) {
 		Password:<br>
 		<input type="password" name="password" required>
 		<br>
-		Confirm Password:<br>
+        Confirm Password:<br>
 		<input type="password" name="confirmpassword" required>
 		<br>
 		Age:<br>
-		<input type="number" name="age" maxlength="2" required>
+		<input type="number" name="age" maxlength="3" required>
 		<br><br>
 		Gender:<br>
 		<input type="radio" name="gender" value="male">Male
@@ -195,7 +197,65 @@ if(isset($_SESSION['user'])) {
 
 		 </div>
 
-	</div>
+
+<?php 
+if(isset($_SESSION['user'])) {
+
+}
+       
+        else {
+ ?>
+   
+
+
+
+		<div id="openModalRegister1" class="modalDialogRegister1">
+			<div>
+		<div class="cls"><a href="#close" title="Close" class="close">X</a></div>
+		<div class= incp ><b>Passwords do not match...<br>Pleas try again!</b></div>
+		<form method="post" action="register.php">
+		First Name:<br>
+		<input type="text" name="firstname">
+		<br>
+		Last Name:<br>
+		<input type="text" name="lastname">
+		<br>
+		Username:<br>
+		<input type="text" name="user" required>
+		<br>
+		Password:<br>
+	
+		<input type="password" name="password" required>
+		<br>
+        Confirm Password:<br>
+		<input type="password" name="confirmpassword" required>
+		<br>
+		Age:<br>
+		<input type="number" name="age" maxlength="3" required>
+		<br><br>
+		Gender:<br>
+		<input type="radio" name="gender" value="male">Male
+		<br>
+		<input type="radio" name="gender" value="female">Female
+		<br><br>
+		Email:<br>
+		<input type:"email" name="email" required>
+		
+	
+
+		<br><br>
+		<button type="submit" name="register">Register</button>
+
+		</form>
+			</div>
+
+		</div>
+
+
+
+	<?php	
+}
+?>
 </div>
 
 
