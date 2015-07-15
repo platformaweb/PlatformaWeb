@@ -38,13 +38,24 @@ header("Location: index.php#openModalRegister1");
 
 if ($_POST['password']!= $_POST['confirmpassword'])
  {
+<<<<<<< HEAD
  	header("Location: index.php#openModalRegister1");
+=======
+<<<<<<< HEAD
+     header("Location: index.php#openModalRegister");
+=======
+  header("Location: index.php#openModalRegister");
+>>>>>>> origin/master
 
 ?>
 
 <div class="wp">Wrong Password! </div>
 
+<<<<<<< HEAD
 <?php
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
  }
 else{
  if(mysql_query("INSERT INTO users(user,email,password,firstname,lastname,confirmpassword,age,gender) VALUES('$user','$email','$password','$firstname','$lastname','$confirmpassword','$age','$gender')"))

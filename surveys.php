@@ -172,9 +172,44 @@ if(isset($_SESSION['user'])) {
 
 				?>
 
+<div class="naturalnessbutton"><a href="#openModalNaturalness"></a></div>
+
+		<div id="openModalNaturalness" class="modalDialogNaturalness">
+			<div>
+		<a href="#close" title="Close" class="close">X</a>
+		<div class="surveynaturalness"><b>Naturalness Survey</b><br></div>
+		<div class="naturalnesspart1text"><b>Part 1/10</b></div>
+		<div class="naturalnessquestiontext"><b>In this section you will be required to give your opinion about the naturalness of the sound you just heard.</b></div>
+		<div class="naturalnessaudio1">
+			<audio controls>
+  			<source src="sounds/naturalness1.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+			</audio>
+		</div>
+		<div class="naturalnessquestion"><b>After listening the sound, please evaluate how the naturalness of the sound is by selecting either excellent, good, fair, poor or bad.</b></div>
+		<form action="" method="POST">
+
+	
+	<label class="block"><input type="radio" name="naturalness1" value="Excellent">Excellent</label>
+	<label class="block"><input type="radio" name="naturalness1" value="Good">Good</label>
+	<label class="block"><input type="radio" name="naturalness1" value="Fair">Fair</label>
+	<label class="block"><input type="radio" name="naturalness1" value="Poor">Poor</label>
+	<label class="block"><input type="radio" name="naturalness1" value="Bad">Bad</label>
+	<input class="submitnaturalness1" type="submit" value="Submit">
+
+		</form>
+			</div>
+
+		</div>
+
+
+
+
+
+
+
 		
-		<p class="fronttext"><b>About us</b></p>
-					<p class="fronttext1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim massa, porta eget purus eget, efficitur vestibulum arcu. Duis libero purus, dictum eu vehicula laoreet, auctor vitae massa. Suspendisse vestibulum venenatis varius. Nullam sollicitudin ultricies pulvinar. Vivamus metus mi, dignissim non condimentum ut, sagittis ac velit. Fusce mattis odio sit amet lacus finibus, ut laoreet magna facilisis. Proin sit amet velit felis. Mauris felis magna, convallis sit amet sollicitudin ut, eleifend sit amet dolor. Suspendisse gravida posuere tortor quis mollis. Phasellus consectetur vulputate convallis. Suspendisse vel urna vitae eros tempus tincidunt quis sit amet turpis. Donec aliquam aliquet mi, quis eleifend ipsum sagittis sit amet. Maecenas quis iaculis dui.</p>
+
 
 		
 		<div class="buttons">
