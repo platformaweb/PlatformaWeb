@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password= "";
 $dbname = "dbtest";
 
 // Create connection
@@ -12,14 +12,15 @@ if ($conn->connect_error) {
 }
 
 
-$user = $_POST['name']; 
-$user1 = $_POST['name1']; 
-$user2 = $_POST['name2']; 
+$user1 = $_POST['name']; 
 $user3 = $_POST['name3'];
 
-$sql = "UPDATE users SET level='admin' WHERE user='$user' ";
-$sql1 = "UPDATE users SET level='poweruser' WHERE user='$user1' ";
-$sql2 = "UPDATE users SET level='user' WHERE user='$user2' ";
+$lvl1 = $_POST['1'];
+
+
+$sql =  "UPDATE users SET level= '$lvl1' WHERE user ='$user1' ";
+$sql1 = "UPDATE users SET level= '$lvl1' WHERE user ='$user1' ";
+$sql2 = "UPDATE users SET level= '$lvl1' WHERE user ='$user1' ";
 $sql3 = "DELETE FROM users WHERE user='$user3' ";
 
  if ($conn->query($sql3) === TRUE) {
@@ -28,16 +29,23 @@ $sql3 = "DELETE FROM users WHERE user='$user3' ";
 
 if ($conn->query($sql) === TRUE) {
     header("Location: admin.php");
+}
+else {
+    echo "Error updating record: " . $conn->error;
+}
 
     if ($conn->query($sql1) === TRUE) {
     header("Location: admin.php");
+}
+else {
+    echo "Error updating record: " . $conn->error;
 }
 
     if ($conn->query($sql2) === TRUE) {
     header("Location: admin.php");
 }
 
-} else {
+ else {
     echo "Error updating record: " . $conn->error;
 }
 

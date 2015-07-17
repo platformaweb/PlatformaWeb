@@ -167,9 +167,51 @@ if(isset($_SESSION['user'])) {
 
 				?>
 
+<?php 
+$searchq = '';
+mysql_connect("localhost","root","") or die("not connect");
+mysql_select_db("dbtest") or die ("not connect");
 
-		
-		
+
+
+if(isset($_POST['search'])){
+$searchq = $_POST['search'];
+$searchq = preg_replace("#[^0-9a-z]#i", "" , $searchq);
+
+
+$query = mysql_query("SELECT * FROM users WHERE user LIKE '%$searchq%' ") or die("Could not connect!");
+$count = mysql_num_rows($query);
+
+if($count == 0)
+{
+	 print $searchq;
+    print $count;
+	$output = 'There was no results!';
+}
+
+
+while($row = mysql_fetch_array($query)){
+
+	$fname = $row['firstname'];
+    $lname = $row['lastname'];
+    $email = $row['email'];
+    $uname = $row['user'];
+    $lvl   = $row['level'];
+    $age1  = $row['age'];
+    $gen   = $row['gender'];
+
+	//$output .= '<div> <b>Username:</b>' .$uname.''.$count.'<br><b>Level:</b>' .$lvl.'<br> <b> Real Name: </b>'.$fname.' '.$lname.' Age:'.$age1.'Gender'.$gen.'<br><b>Email: </b>  '  .$email. '<br></div>';
+
+
+}
+
+
+}
+
+
+if($searchq == ''){		
+	?>	
+
 		<table id="customers">
   <tr>
     <th>Username</th>
@@ -203,23 +245,63 @@ if(isset($_SESSION['user'])) {
 
  
   <?php
+}
             }
+            else{
             ?>
 
-     
 
+<table id="customers">
+  <tr>
+    <th>Username</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Email</th>
+    <th>UserLevel</th>
+  </tr>
+
+
+
+<tr>
+    <td><?php echo $uname; ?></td>
+    <td><?php echo $fname; ?></td>
+    <td><?php echo $lname; ?></td>
+    <td><?php echo $age1;  ?></td>
+    <td><?php echo $gen;   ?></td>
+    <td><?php echo $email; ?></td>
+    <td><?php echo $lvl;   ?>
+
+  </tr>
+<?php 
+}
+?>
+
+
+
+
+
+
+
+    
 </table>
 
 <form action="updatelevels.php" method="post">
 <div class="butondeactualizare">
+      
+Enter Username to grant privileges:      <br><input type="text" name="name" size="15"><br>
 
-Enter Username to grant Admin privileges:     <br><input type="text" name="name" size="15"><br>
-Enter Username to grant PowerUser privileges: <br><input type="text" name="name1" size="15"><br>
-Enter Username to grant User privileges:      <br><input type="text" name="name2" size="15"><br>
 
-<input type="submit" value="Change"></button></div>
+<input type="radio"     name="1"    value="Admin"   > Admin<br>
+<input type="radio"     name="1"    value="Power User" > PW<br>
+<input type="radio"     name="1"    value="User"   >User<br> <br>
+<input type="submit"   >
+
+
+</div>
+
 <div class="delete">
-
 Enter Username to be deleted:<br><input type="text" name="name3" size="15"><br>
 <input type="submit" value="Delete"></button>
 
@@ -228,41 +310,8 @@ Enter Username to be deleted:<br><input type="text" name="name3" size="15"><br>
 
 <?php
 
-mysql_connect("localhost","root","") or die("not connect");
-mysql_select_db("dbtest") or die ("not connect");
-
-$output = '';
-
-if(isset($_POST['search'])){
-$searchq = $_POST['search'];
 
 
-$query = mysql_query("SELECT * FROM users WHERE user LIKE '%$searchq%' ") or die("Could not connect!");
-$count = mysql_num_rows($query);
-
-if($count == 0)
-{
-
-	$output = 'There was no results!';
-}
-else{
-
-while($row = mysql_fetch_array($query)){
-
-	$fname = $row['firstname'];
-    $lname = $row['lastname'];
-    $email = $row['email'];
-    $uname = $row['user'];
-    $lvl   = $row['level'];
-
-	$output = '<div> <b>Username:</b>' .$uname.' <br><b>Level:</b>' .$lvl.'<br> <b> Real Name: </b>'.$fname.' '.$lname.'<br><b>Email: </b>  '  .$email. '<br></div>';
-
-
-}
-
-}
-
-}
 ?>
 
 
@@ -276,15 +325,8 @@ while($row = mysql_fetch_array($query)){
 </form>
 
 
-<div class="searchtest">
+	
 
-	<?php
-echo ($output); ?> </div>
-
-
-
-
-		
 		<div class="buttons">
 			<footer class="footer"><p class="copyright">Copyright &reg; Hadarau Rares-Horatiu & Lapusan Mirel</p>
 					<ul class="footerbuttons">

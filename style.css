@@ -605,18 +605,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', end
 	font-family: "gothic";
 }
 
-.naturalnessbutton a{
-	background:url(images/naturalness.png) no-repeat;
-	width:161px;
-	height:105px;
-	display: block;
-	position: absolute;
-	margin-top:150px;
-	margin-left:300px;
-
-}
-
-.modalDialogNaturalness {
+.modalDialogRegister1 {
 	position: fixed;
 	font-family:"gothic";
 	top: 0;
@@ -632,12 +621,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', end
 	pointer-events: none;
 }
 
-.modalDialogNaturalness:target {
+.modalDialogRegister1:target {
 	opacity:1;
 	pointer-events: auto;
 }
 
-.modalDialogNaturalness > div {
+.modalDialogRegister1 > div {
+
 	width: 400px;
 	position: relative;
 	margin: 10% auto;
@@ -654,64 +644,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', end
 
 }
 
-.surveynaturalness {
-	margin-left:125px;
-	font-family:"gothic";
-	font-size: 20px;
-}
 
-.naturalnesspart1text {
-
-	font-family:"gothic";
-	font-size: 18px;
-	margin-left:175px;
-	margin-top:15px;
-}
-
-.naturalnessquestiontext {
-
-	font-family: "gothic";
-	font-size:13px;
-	margin-left:5px;
-	margin-top: 30px;
-}
-
-.naturalnessaudio1 {
-	margin-top:30px;
-}
-
-.naturalnessquestion {
-	margin-top:15px;
-	font-family: "gothic";
-	font-size:13px;
-}
-
-.block {
-
-display: block;
-margin-top:5px;
-
-}
-
-.submitnaturalness1 {
-	margin-top:3px;
-	margin-left:5px;
-}
-
-/* For General Button: */
-
-.generalbutton a{
-	background:url(images/naturalness.png) no-repeat;
-	width:161px;
-	height:105px;
-	display: block;
-	position: absolute;
-	margin-top:150px;
-	margin-left:500px;
-
-}
-
-.modalDialogGeneral {
+.modalDialogRegister2 {
 	position: fixed;
 	font-family:"gothic";
 	top: 0;
@@ -727,12 +661,13 @@ margin-top:5px;
 	pointer-events: none;
 }
 
-.modalDialogGeneral:target {
+.modalDialogRegister2:target {
 	opacity:1;
 	pointer-events: auto;
 }
 
-.modalDialogGeneral > div {
+.modalDialogRegister2 > div {
+
 	width: 400px;
 	position: relative;
 	margin: 10% auto;
@@ -749,46 +684,70 @@ margin-top:5px;
 
 }
 
-.surveynaturalness {
-	margin-left:125px;
+
+
+
+.modalDialogRegister3 {
+	position: fixed;
 	font-family:"gothic";
-	font-size: 20px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:0;
+	/*-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;*/
+	pointer-events: none;
 }
 
-.generalpart1text {
-
-	font-family:"gothic";
-	font-size: 18px;
-	margin-left:160px;
-	margin-top:15px;
+.modalDialogRegister3:target {
+	opacity:1;
+	pointer-events: auto;
 }
 
-.naturalnessquestiontext {
+.modalDialogRegister3 > div {
 
-	font-family: "gothic";
-	font-size:13px;
-	margin-left:5px;
-	margin-top: 30px;
-}
-
-.naturalnessaudio1 {
-	margin-top:30px;
-}
-
-.naturalnessquestion {
-	margin-top:15px;
-	font-family: "gothic";
-	font-size:13px;
-}
-
-.block {
-
-display: block;
-margin-top:5px;
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #e8e8e8; /* Old browsers */
+	background: -moz-linear-gradient(top,  #e8e8e8 0%, #ffffff 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8e8e8), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #e8e8e8 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #e8e8e8 0%,#ffffff 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #e8e8e8 0%,#ffffff 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #e8e8e8 0%,#ffffff 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 
 }
 
-.submitnaturalness1 {
-	margin-top:3px;
-	margin-left:5px;
+
+
+.incp{
+
+
+margin-left: 200px;
+font-style: italic;
 }
+
+.cls{
+
+margin-left: 400px;
+}
+
+.clo{
+
+	margin-left: 400px;
+}
+
+.uname{
+
+
+}
+
+
