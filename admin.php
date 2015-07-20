@@ -169,6 +169,13 @@ if(isset($_SESSION['user'])) {
 
 <?php 
 $searchq = '';
+$fname = '';
+    $lname = '';
+    $email = '';
+    $uname = '';
+    $lvl   = '';
+    $age1  = '';
+    $gen  = '';
 mysql_connect("localhost","root","") or die("not connect");
 mysql_select_db("dbtest") or die ("not connect");
 
@@ -184,8 +191,8 @@ $count = mysql_num_rows($query);
 
 if($count == 0)
 {
-	 print $searchq;
-    print $count;
+	 
+  
 	$output = 'There was no results!';
 }
 
@@ -293,9 +300,9 @@ if($searchq == ''){
 Enter Username to grant privileges:      <br><input type="text" name="name" size="15"><br>
 
 
-<input type="radio"     name="1"    value="Admin"   > Admin<br>
-<input type="radio"     name="1"    value="Power User" > PW<br>
-<input type="radio"     name="1"    value="User"   >User<br> <br>
+<input type="radio"     name="1"    value="admin"   > Admin<br>
+<input type="radio"     name="1"    value="poweruser" > PW<br>
+<input type="radio"     name="1"    value="user"   >User<br> <br>
 <input type="submit">
 
 
