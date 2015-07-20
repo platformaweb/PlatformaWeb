@@ -169,6 +169,13 @@ if(isset($_SESSION['user'])) {
 
 <?php 
 $searchq = '';
+$fname = '';
+    $lname = '';
+    $email = '';
+    $uname = '';
+    $lvl   = '';
+    $age1  = '';
+    $gen  = '';
 mysql_connect("localhost","root","") or die("not connect");
 mysql_select_db("dbtest") or die ("not connect");
 
@@ -184,8 +191,8 @@ $count = mysql_num_rows($query);
 
 if($count == 0)
 {
-	 print $searchq;
-    print $count;
+	 
+  
 	$output = 'There was no results!';
 }
 
