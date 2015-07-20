@@ -72,7 +72,7 @@ if(isset($_SESSION['user'])) {
         	{
         ?>
         	<div class="administratorcontrolpaneltext"> 
-        	<a href="poweruser.php"><b>PowerUser Control Panel</b></a></div> 
+        	<a href="powerusercontrolpanel.php"><b>PowerUser Control Panel</b></a></div> 
         		<?php						
 			} 
 		}
