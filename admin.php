@@ -293,26 +293,20 @@ if($searchq == ''){
 Enter Username to grant privileges:      <br><input type="text" name="name" size="15"><br>
 
 
-<input type="radio"     name="1"    value="Admin"   > Admin<br>
-<input type="radio"     name="1"    value="Power User" > PW<br>
-<input type="radio"     name="1"    value="User"   >User<br> <br>
-<input type="submit"   >
+<input type="radio"     name="1"    value="admin"   > Admin<br>
+<input type="radio"     name="1"    value="poweruser" > PW<br>
+<input type="radio"     name="1"    value="user"   >User<br> <br>
+<input type="submit">
 
 
 </div>
 
 <div class="delete">
 Enter Username to be deleted:<br><input type="text" name="name3" size="15"><br>
-<input type="submit" value="Delete"></button>
+<input type="submit" name="Delete" value="Delete" ></button>
 
 </div>
 </form>
-
-<?php
-
-
-
-?>
 
 
 <form action="admin.php" method="post">
@@ -343,11 +337,29 @@ Enter Username to be deleted:<br><input type="text" name="name3" size="15"><br>
 
 		 </div>
 
+
+
+
+
+
 	</div>
+<div id="openModaldelete" class="modalDialogdelete">
+
+            <div>
+		<a href="#close" title="Close" class="close">X</a>
+		<form  action="updatelevels.php" method="post">
+		Are you sure you want to delete ?<br>
+		<br>
+		<input type="submit" name="Yes"  value="Yes">
+		<input type="submit" name="No"   Value="No">
+		</form>
+			</div>
+
+      
 </div>
 
 
-
+</div>
 
 
 

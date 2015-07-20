@@ -14,17 +14,17 @@ if ($conn->connect_error) {
 
 $user1 = $_POST['name']; 
 $user3 = $_POST['name3'];
-
 $lvl1 = $_POST['1'];
 
 
 $sql =  "UPDATE users SET level= '$lvl1' WHERE user ='$user1' ";
 $sql1 = "UPDATE users SET level= '$lvl1' WHERE user ='$user1' ";
 $sql2 = "UPDATE users SET level= '$lvl1' WHERE user ='$user1' ";
-$sql3 = "DELETE FROM users WHERE user='$user3' ";
+$sql3 = "DELETE FROM users  Where user ='$user3'";
 
  if ($conn->query($sql3) === TRUE) {
-    header("Location: admin.php");
+  
+ header("Location: admin.php");
 }
 
 if ($conn->query($sql) === TRUE) {
@@ -49,9 +49,27 @@ else {
     echo "Error updating record: " . $conn->error;
 }
 
+
+if (isset($_POST['Delete'])) {
+
+
+header("Location:#openModaldelete");
+
+}
+
+
+if (isset($_POST['Yes'])) {
+
+
+
+}
+print $user3;
+print ($_POST['Yes']);
+
+
+
 $conn->close();
 ?> 
-
 
 
 
