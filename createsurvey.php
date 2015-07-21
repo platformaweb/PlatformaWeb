@@ -11,9 +11,19 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$type= $_POST['surveytype'];
+$typeq= $_POST['surveytype'];
 $nameq = $_POST['surveyname'];
 
-$typeq = "INSERT INTO  survey(Type,Name)  VALUES ('$type','$name')";
-$mysqli->query($query);
+$qeri = "INSERT INTO  survey(Type,Name)  VALUES ('$typeq','$nameq')";
+
+
+if ($conn->query($qeri) === TRUE) {
+    echo "New record created successfully";
+} else {
+  
+}
+
+$conn->close();
+
+
 ?>
