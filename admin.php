@@ -301,7 +301,7 @@ Enter Username to grant privileges:      <br><input type="text" name="name" size
 
 
 <input type="radio"     name="1"    value="admin"   > Admin<br>
-<input type="radio"     name="1"    value="poweruser" > PW<br>
+<input type="radio"     name="1"    value="creator" > Creator<br>
 <input type="radio"     name="1"    value="user"   >User<br> <br>
 <input type="submit">
 
