@@ -1,7 +1,7 @@
 	<?php 
 	
 	session_start();
-  	if($_SESSION['level'] != 'poweruser') {
+  	if($_SESSION['level'] != 'creator') {
     header('Location: images/nicetry.jpg');
     exit;
   }
@@ -66,7 +66,7 @@
 
                 <?php 
 if(isset($_SESSION['user'])) {
-        if($_SESSION['level'] == 'poweruser') 
+        if($_SESSION['level'] == 'creator') 
         	{
         ?>
         	<div class="administratorcontrolpaneltext"> 
@@ -177,28 +177,19 @@ if(isset($_SESSION['user'])) {
 		<div id="openModalSurvey" class="modalDialogSurvey">
 			<div>
 		<a href="#close" title="Close" class="close">X</a>
+		<form action="createsurvey.php" method="POST">
 
-	<form action="createsurvey.php" method="POST">
-		<br>Choose the type of the Survey:<br>
+<br>Name of the Survey: <br><input type="text" name="surveyname">
+	<br>
+		<br>Choose section to add:<br>
 			<select name="surveytype">
 			<option value="naturalness">Naturalness</option>
 			<option value="general">General</option>
 			<option value="meanopinionscore">Mean Opinion Score</option>
 			<option value="blabla">Blabla</option>
-			</select>
-		<br><br>Name of the Survey: <br><input type="text" name="surveyname">
-		<script src="addInput.js" language="Javascript" type="text/javascript"></script>
-     <div id="dynamicInput">
-          Question 1<br><input type="text" name="myInputs[]">
-     </div>
-     <input type="button" value="Add another question (maximum 5 questions)." onClick="addInput('dynamicInput');">
-
-<script src="addSounds.js" language="Javascript" type="text/javascript"></script>
-     <div id="dynamicSound">
-          Sound 1<br><input type="text" name="mySounds[]">
-     </div>
-     <input type="button" value="Add another sound file (maximum 5 sound files)." onClick="addSound('dynamicSound');">
-
+			</select><br>
+		
+	
 
 
 <!-- <script src="addAnswers.js" language="Javascript" type="text/javascript"></script>

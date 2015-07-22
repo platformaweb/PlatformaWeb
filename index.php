@@ -69,7 +69,7 @@ if(isset($_SESSION['user'])) {
 
                 <?php 
 if(isset($_SESSION['user'])) {
-        if($_SESSION['level'] == 'poweruser') 
+        if($_SESSION['level'] == 'creator') 
         	{
         ?>
         	<div class="administratorcontrolpaneltext"> 
