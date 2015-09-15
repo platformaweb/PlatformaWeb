@@ -1,7 +1,7 @@
 	<?php 
 	
 	session_start();
-  	if($_SESSION['level'] != 'poweruser') {
+  	if($_SESSION['level'] != 'creator') {
     header('Location: images/nicetry.jpg');
     exit;
   }
@@ -14,6 +14,7 @@
 	<head>
 		<title>Platforma Web</title>
 		<link rel="stylesheet" type="text/css" href="poweruserfooter.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
 	</head>
@@ -65,7 +66,7 @@
 
                 <?php 
 if(isset($_SESSION['user'])) {
-        if($_SESSION['level'] == 'poweruser') 
+        if($_SESSION['level'] == 'creator') 
         	{
         ?>
         	<div class="administratorcontrolpaneltext"> 
@@ -176,40 +177,81 @@ if(isset($_SESSION['user'])) {
 		<div id="openModalSurvey" class="modalDialogSurvey">
 			<div>
 		<a href="#close" title="Close" class="close">X</a>
+		<form action="createsurvey.php" method="POST">
 
-	<form action="createsurvey.php" method="POST">
-		<br>Choose the type of the Survey:<br>
+<br>Name of the Survey: <br><input type="text" name="surveyname">
+	<br>
+		<br>Choose section to add:<br>
 			<select name="surveytype">
 			<option value="naturalness">Naturalness</option>
 			<option value="general">General</option>
 			<option value="meanopinionscore">Mean Opinion Score</option>
 			<option value="blabla">Blabla</option>
-			</select>
-		<br><br>Name of the Survey: <br><input type="text" name="surveyname">
-		<script src="addInput.js" language="Javascript" type="text/javascript"></script>
+			</select><br>
+		
+	
+
+
+<!-- <script src="addAnswers.js" language="Javascript" type="text/javascript"></script>
 <form method="POST">
-     <div id="dynamicInput">
-          Question 1<br><input type="text" name="myInputs[]">
+     <div id="dynamicAnswer">
+          Answer 1<br><input type="text" name="myAnswers[]">
      </div>
-     <br><input type="button" value="Add another question (maximum 5 questions)." onClick="addInput('dynamicInput');">
-</form>
-<br>Number of questions inserted: <br><input type="text" name="nrofquestions" size="1">
-
-<script src="addSounds.js" language="Javascript" type="text/javascript"></script>
-<form method="POST">
-     <div id="dynamicSound">
-          Sound 1<br><input type="text" name="mySounds[]">
-     </div>
-     <br><input type="button" value="Add another sound file (maximum 5 sound files)." onClick="addSound('dynamicSound');">
-</form>
-
-<br>Number of sounds inserted: <br><input type="text" name="nrofsounds" size="1">
-
-
+     <input type="button" value="Add another answer." onClick="addAnswer('dynamicAnswer');">
+</form> -->
+<br><br><button type="submit" name="submitsurvey">Submit Survey</button>
 
 		</div>
 	</form>
-</div>
+</div> 
+
+
+	<div id="openModalAnswer" class="modalDialogAnswer">
+			<div>
+		<a href="#close" title="Close" class="close">X</a>
+
+	<form action="createanswer.php" method="POST">
+		
+		<div class="surveynamefromdatabase">Name of the Survey: </div><br>
+		
+
+		$query = "SELECT Questionid FROM category";
+$questionresult = mysql_query($query) or die("<h1>Error - the query could not be executed</h1>\n");
+$question_num_rows = mysql_num_rows($questionresult);
+
+print("<h3>Questions: </h3>\n");
+print($num_rows);
+
+if($num_rows == 0)
+{
+    print("<h3>No items are currently recorded in table Questions</h3>\n");
+}
+else
+{
+    print("<select id=\"actors\" name=\"actors\">\n");
+    while ($row = mysql_fetch_array($result))
+    {
+            print("<option>$row[0]</option>");
+    )
+    print("</select>");
+    mysql_free_result($result);
+}
+
+
+<!-- <script src="addAnswers.js" language="Javascript" type="text/javascript"></script>
+<form method="POST">
+     <div id="dynamicAnswer">
+          Answer 1<br><input type="text" name="myAnswers[]">
+     </div>
+     <input type="button" value="Add another answer." onClick="addAnswer('dynamicAnswer');">
+</form> -->
+<br><br><button type="submit" name="submitanswer">Submit Answer</button>
+
+		</div>
+	</form>
+</div> 
+
+
 
 
 
