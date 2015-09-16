@@ -181,14 +181,11 @@ if(isset($_SESSION['user'])) {
 
 <br>Name of the Survey: <br><input type="text" name="surveyname">
 	<br>
-		<br>Choose section to add:<br>
-			<select name="surveytype">
-			<option value="naturalness">Naturalness</option>
-			<option value="general">General</option>
-			<option value="meanopinionscore">Mean Opinion Score</option>
-			<option value="blabla">Blabla</option>
-			</select><br>
-		
+	Author of the Survey: <br><input type="text" name="autor">
+		<br>
+	Informations: <br><input type="text" name="info">
+		<br>
+	Instructions: <br><input type="text" name="instr">
 	
 
 
@@ -213,29 +210,6 @@ if(isset($_SESSION['user'])) {
 	<form action="createanswer.php" method="POST">
 		
 		<div class="surveynamefromdatabase">Name of the Survey: </div><br>
-		
-
-		$query = "SELECT Questionid FROM category";
-$questionresult = mysql_query($query) or die("<h1>Error - the query could not be executed</h1>\n");
-$question_num_rows = mysql_num_rows($questionresult);
-
-print("<h3>Questions: </h3>\n");
-print($num_rows);
-
-if($num_rows == 0)
-{
-    print("<h3>No items are currently recorded in table Questions</h3>\n");
-}
-else
-{
-    print("<select id=\"actors\" name=\"actors\">\n");
-    while ($row = mysql_fetch_array($result))
-    {
-            print("<option>$row[0]</option>");
-    )
-    print("</select>");
-    mysql_free_result($result);
-}
 
 
 <!-- <script src="addAnswers.js" language="Javascript" type="text/javascript"></script>
@@ -250,9 +224,6 @@ else
 		</div>
 	</form>
 </div> 
-
-
-
 
 
 
