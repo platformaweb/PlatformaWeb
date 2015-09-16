@@ -14,14 +14,15 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$typeq= $_POST['surveytype'];
 $nameq = $_POST['surveyname'];
-$suser = $_SESSION['user'];
+$autorq = $_POST['autor'];
+$infoq = $_POST['info'];
+$instrq = $_POST['instr'];
+
+$qeri   = "INSERT INTO  survey(Name)  VALUES ('$nameq')";
+$qeri3  = "INSERT INTO created_survey(Survey_Name,Autor,Descriere,Instructiuni) VALUES('$nameq','$autorq','$infoq','$instrq') ";
 
 
-$qeri   = "INSERT INTO  survey(Type,Name)  VALUES ('$typeq','$nameq')";
-$qeri3  = "INSERT INTO created_survey(id_user) VALUES('$suser') ";
-$qeri4  = "INSERT INTO created_survey(id_survei) SELECT id_survey FROM survey";
 
 if ($conn->query($qeri) === TRUE) {
     echo "New record created successfully";
@@ -35,11 +36,7 @@ if ($conn->multi_query($qeri3) === TRUE) {
   echo "wrong output";
 }
 
-if ($conn->multi_query($qeri4) === TRUE) {
-  echo "New record created successfully";
-} else {
-  echo "wrong output";
-}
+
 $conn->close();
 }
 else{
