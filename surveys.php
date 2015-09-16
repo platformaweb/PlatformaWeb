@@ -68,7 +68,7 @@ if(isset($_SESSION['user'])) {
 
  <?php 
 if(isset($_SESSION['user'])) {
-        if($_SESSION['level'] == 'poweruser') 
+        if($_SESSION['level'] == 'creator') 
         	{
         ?>
         	<div class="administratorcontrolpaneltext"> 
@@ -110,7 +110,7 @@ if(isset($_SESSION['user'])) {
 		</form>
 			</div>
 		</div>
-				<?php
+					<?php
 
 
 			}
@@ -125,6 +125,7 @@ if(isset($_SESSION['user'])) {
        
         else {
  ?>
+
 	<div class="modalClassRegister"><a href="#openModalRegister"><b>Register</b></a></div>
 
 		<div id="openModalRegister" class="modalDialogRegister">
@@ -329,7 +330,50 @@ if(isset($_SESSION['user'])) {
 
 
 
+<?php  
+			
+mysql_connect("localhost","root","") or die("not connect");
+mysql_select_db("dbtest") or die ("not connect");
 
+
+$sname='';
+$querys = mysql_query("SELECT Name FROM survey ") or die("bla");
+$sname = mysql_fetch_array($querys);
+
+         	//if(isset($_SESSION['user'])=="")
+			//{
+?>
+<div class="surveybox">
+
+<div class="boxed">
+	
+	<div class="surveylinks">
+    <table id="surt">
+  <tr>
+    <th>SURVEY NAME</th>
+    
+</tr>
+<tr><th></th></tr>
+<tr><th></th></tr>
+<tr>
+	<?php while($sname = mysql_fetch_array($querys)) {
+            ?>
+    <th><input type="button" onclick="alert('<?php echo $sname['Name']; ?>')" value=" <?php echo $sname['Name']; ?> "> </th>
+</tr>
+   
+<?php 
+}
+?>
+
+    </div>
+    
+</div>
+
+
+</div>
+<?php
+//}
+?>
 
 
 
@@ -352,6 +396,9 @@ if(isset($_SESSION['user'])) {
 			
 
 		 </div>
+
+
+
 
 	</div>
 </div>
